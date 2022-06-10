@@ -18,10 +18,9 @@ export default SignupScreen = ({ navigation }) => {
     }
 
     const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-    if (!email && reg.test(email)) {
+    if (!email || !reg.test(email)) {
       isValid = false;
     }
-
     if (!mobile || isNaN(mobile) || (mobile.trim().length != 10) || ((mobile[0] != 6) && (mobile[0] != 7) && (mobile[0] != 8) && (mobile[0] != 9))) {
       isValid = false
     }
